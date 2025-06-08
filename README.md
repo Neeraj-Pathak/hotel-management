@@ -1,5 +1,3 @@
-
-```markdown
 # 🏨 Hotel Management System
 
 A full-stack **Hotel Management System** for managing hotel operations like room management, customer bookings, and user authentication. Built using **Spring Boot + Spring Security** in the backend and **ReactJS** in the frontend.
