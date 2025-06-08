@@ -1,6 +1,3 @@
-Here is your cleaned-up and professionally styled `README.md`, with consistent formatting, spacing, and clear font usage (Markdown-compliant). It's ready to copy and paste directly:
-
----
 
 ```markdown
 # 🏨 Hotel Management System
