@@ -1,42 +1,41 @@
-Sure Neeraj! Here's a complete `README.md` you can directly copy and paste into your project. It includes everything: overview, features, tech stack, project structure, how to run, deployment on Render, Railway, and Netlify, along with Postman testing.
+Here is your cleaned-up and professionally styled `README.md`, with consistent formatting, spacing, and clear font usage (Markdown-compliant). It's ready to copy and paste directly:
 
 ---
 
 ```markdown
 # 🏨 Hotel Management System
 
-A full-stack **Hotel Management System** for managing hotel operations like room management, customer bookings, and user authentication. Built with **Spring Boot** and **Spring Security** in the backend, and **ReactJS** in the frontend.
+A full-stack **Hotel Management System** for managing hotel operations like room management, customer bookings, and user authentication. Built using **Spring Boot + Spring Security** in the backend and **ReactJS** in the frontend.
 
 ---
 
 ## 📌 Features
 
 ### 🔐 Authentication
-- JWT-based login and registration
-- Role-based access (Admin and Customer)
-- Session persistence using localStorage
+- JWT-based login & registration
+- Role-based access (Admin / Customer)
+- Session persistence with `localStorage`
 
-### 🛠️ Admin Functionalities
-- Add, edit, delete, and view rooms
-- View all reservations with pagination
-- Secure APIs with role restrictions
+### 🛠️ Admin Panel
+- Add, update, delete, view all rooms
+- View all customer reservations (paginated)
+- Respond to customer reservations (Approve,Reject)
+- Manage secure backend APIs
 
-### 👤 Customer Functionalities
-- View available rooms
-- Book a room
-- View their bookings
-- Cancel bookings
+### 👤 Customer Panel
+- View and book available rooms
+- View their own bookings
 
-### 🎨 Frontend
-- Responsive UI using plain CSS + Bootstrap
-- Sidebar navigation for login/register
-- Conditional rendering based on user role
+### 🎨 UI/UX
+- Responsive and clean design using CSS + Bootstrap
+- Conditional sidebar UI for different roles
+- Toast notifications for actions and errors
 
 ---
 
 ## 🧰 Tech Stack
 
-### Backend
+### 🔙 Backend
 - Java 17
 - Spring Boot
 - Spring Security (JWT)
@@ -44,19 +43,21 @@ A full-stack **Hotel Management System** for managing hotel operations like room
 - MySQL
 - Maven
 
-### Frontend
+### 🔜 Frontend
 - React.js
 - React Router DOM
 - React Toastify
-- Bootstrap & custom CSS
+- Bootstrap 5
+- Custom CSS
 
-### Tools & Deployment
-- IntelliJ IDEA
+### 🛠 Tools & Deployment
+- IntelliJ IDEA (Backend)
+- VS Code (Frontend)
 - Postman (API Testing)
-- GitHub (Version control)
-- Netlify (Frontend deployment)
-- Render & Railway (Backend deployment)
-- Docker (Containerization)
+- GitHub (Version Control)
+- Netlify (Frontend Deployment)
+- Render & Railway (Backend Deployment)
+- Docker (Optional)
 
 ---
 
@@ -78,9 +79,9 @@ hotel-management/
 
 ---
 
-## 🚀 How to Run Locally
+## 🚀 Getting Started (Local Setup)
 
-### 1️⃣ Clone the repository
+### 1️⃣ Clone the Repository
 
 ```bash
 git clone https://github.com/your-username/hotel-management.git
@@ -89,16 +90,16 @@ cd hotel-management
 
 ---
 
-### 2️⃣ Run the Backend (Spring Boot)
+### 2️⃣ Backend Setup
 
 ```bash
 cd backend
 ./mvnw spring-boot:run
 ```
 
-📍 **Backend runs at:** `http://localhost:8080`
+📍 Runs at: `http://localhost:8080`
 
-Ensure your `application.properties` has correct MySQL config:
+Update `application.properties` with your DB config:
 
 ```properties
 spring.datasource.url=jdbc:mysql://localhost:3306/hotel_db
@@ -109,7 +110,7 @@ spring.jpa.hibernate.ddl-auto=update
 
 ---
 
-### 3️⃣ Run the Frontend (React)
+### 3️⃣ Frontend Setup
 
 ```bash
 cd frontend
@@ -117,9 +118,9 @@ npm install
 npm start
 ```
 
-📍 **Frontend runs at:** `http://localhost:3000`
+📍 Runs at: `http://localhost:3000`
 
-Ensure `.env` is configured:
+`.env` setup (create this file):
 
 ```
 REACT_APP_BACKEND_URL=http://localhost:8080
@@ -129,45 +130,41 @@ REACT_APP_BACKEND_URL=http://localhost:8080
 
 ## 📦 Deployment
 
-### 🌍 Backend Deployment
+### 🌍 Backend (Render & Railway)
 
-| Platform    | 
-| ----------- | 
-| 🚀 Render   |
-| 🛤️ Railway |
-
-Set the following environment variables:
+1. Deploy to **Render** or **Railway**
+2. Set this environment variable:
 
 ```env
 frontend.url=https://hotelmanagementservice.netlify.app,http://localhost:3000
 ```
 
-### 💻 Frontend Deployment
+3. CORS handled using whitelist in `SimpleCorsFilter`
 
-| Platform   | Link                                                                                     |
+---
+
+### 💻 Frontend (Netlify)
+
+| Platform   | URL                                                                                      |
 | ---------- | ---------------------------------------------------------------------------------------- |
 | 🌐 Netlify | [https://hotelmanagementservice.netlify.app](https://hotelmanagementservice.netlify.app) |
-
-To deploy:
 
 ```bash
 cd frontend
 npm run build
 ```
 
-Upload the `build/` folder to Netlify or connect GitHub directly.
+Upload `build/` to Netlify or link repo for auto-deploy.
 
 ---
 
 ## 🧪 Postman API Testing
 
-### 🔐 Login API
+### 🔐 Login
 
-```
+```http
 POST /api/auth/login
 ```
-
-**Body:**
 
 ```json
 {
@@ -176,13 +173,13 @@ POST /api/auth/login
 }
 ```
 
-### 📝 Register API
+---
 
-```
+### 📝 Register
+
+```http
 POST /api/auth/register
 ```
-
-**Body:**
 
 ```json
 {
@@ -192,14 +189,14 @@ POST /api/auth/register
 }
 ```
 
-### 📅 Book Room (Customer)
+---
 
-```
+### 📅 Book Room
+
+```http
 POST /customer/book
 Authorization: Bearer <JWT_TOKEN>
 ```
-
-**Body:**
 
 ```json
 {
@@ -209,81 +206,92 @@ Authorization: Bearer <JWT_TOKEN>
 }
 ```
 
-### 🧾 View Rooms (All Users)
+---
 
-```
+### 🧾 View Rooms
+
+```http
 GET /rooms?page=0
 ```
 
 ---
 
-## ⚙️ CORS Setup
+## ⚙️ CORS Configuration
 
-Your backend handles multiple allowed origins using:
+In `SimpleCorsFilter.java`:
 
 ```java
 @Value("${frontend.url}")
-private String frontendUrls;  // Comma-separated
+private String frontendUrls;
 
-res.setHeader("Access-Control-Allow-Origin", origin);  // validated from whitelist
+res.setHeader("Access-Control-Allow-Origin", origin); // validated
 ```
 
-Set the property in `application.properties` or Render/Netlify environment:
+Set in Render/Railway environment or `.properties`:
 
-```
+```properties
 frontend.url=http://localhost:3000,https://hotelmanagementservice.netlify.app
 ```
 
 ---
 
 ## 📸 Screenshots
-https://github.com/Neeraj-Pathak/hotel-management/blob/main/README.md
-*HOMEPAGE*
-![Screenshot_2](https://github.com/user-attachments/assets/24994599-914d-4e70-83fd-f27754409cd1)
 
-*REGISTRATION FORM*
-![Screenshot_1](https://github.com/user-attachments/assets/89574f57-48ea-4e71-be33-e07cecaf74f0)
+### 🏠 Home Page
 
-*LOGIN FORM*
-![Screenshot_3](https://github.com/user-attachments/assets/8d7b7961-eff4-4456-9fa0-cf4c9d5bbda8)
+![Home](https://github.com/user-attachments/assets/24994599-914d-4e70-83fd-f27754409cd1)
 
-*ADMIN POST ROOM*
-![Screenshot_4](https://github.com/user-attachments/assets/12215b20-0518-47f0-b1cc-dd8eb0ed4ed3)
+### 🧾 Registration Form
 
-*ADMIN VIEW ROOMS*
-![Screenshot_5](https://github.com/user-attachments/assets/c942d6da-7b1f-40c0-9dce-bf1524f3d586)
+![Register](https://github.com/user-attachments/assets/89574f57-48ea-4e71-be33-e07cecaf74f0)
 
-*ADMIN RESERVATIONS*
-![Screenshot_7](https://github.com/user-attachments/assets/d86d4922-1389-433c-82cb-786a8c5e281a)
+### 🔐 Login
 
-*CUSTOMER VIEW & BOOK ROOMS*
-![Screenshot_6](https://github.com/user-attachments/assets/d3cf02fe-ec4e-4853-bc19-831926af7424)
+![Login](https://github.com/user-attachments/assets/8d7b7961-eff4-4456-9fa0-cf4c9d5bbda8)
 
-*CUSTOMER BOOKINGS*
-![Screenshot_8](https://github.com/user-attachments/assets/e5cb3fb1-b552-4522-bb07-ebd2ccc16834)
+### 🛠️ Admin Post Room
 
+![Post Room](https://github.com/user-attachments/assets/12215b20-0518-47f0-b1cc-dd8eb0ed4ed3)
+
+### 📋 Admin Room List
+
+![Rooms](https://github.com/user-attachments/assets/c942d6da-7b1f-40c0-9dce-bf1524f3d586)
+
+### 🧾 Admin Reservations
+
+![Reservations](https://github.com/user-attachments/assets/d86d4922-1389-433c-82cb-786a8c5e281a)
+
+### 👤 Customer View & Book Rooms
+
+![Customer Rooms](https://github.com/user-attachments/assets/d3cf02fe-ec4e-4853-bc19-831926af7424)
+
+### 📅 Customer Bookings
+
+![Bookings](https://github.com/user-attachments/assets/e5cb3fb1-b552-4522-bb07-ebd2ccc16834)
+
+---
 
 ## 📚 Key Learnings
 
-* Implemented JWT Authentication in Spring Security
-* Built paginated, secure APIs in Spring Boot
-* Designed conditional UI with ReactJS
-* Deployed full-stack app using Netlify + Render
-* Used Postman to validate and debug API requests
+* ✅ Implemented JWT Authentication using Spring Security
+* ✅ Built paginated and secured REST APIs with Spring Boot
+* ✅ Designed conditional dynamic UI using React
+* ✅ Deployed a full-stack project using Netlify and Render
+* ✅ Validated API requests with Postman and debugged CORS issues
 
 ---
 
 ## 🙋‍♂️ Author
 
 **Neeraj Pathak**
-B.Tech – CSE (AI & ML)
-🌐 [LinkedIn](https://www.linkedin.com/in/yourprofile)
-📧 [Gmail](neeraj.r.pathak07@gmail.com)
+🎓 B.Tech – CSE (AI & ML)
+🔗 [LinkedIn](https://www.linkedin.com/in/yourprofile)
+📧 [neeraj.r.pathak07@gmail.com](mailto:neeraj.r.pathak07@gmail.com)
 
 ---
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **MIT License**.
+See the [LICENSE](LICENSE) file for more details.
 
-```
