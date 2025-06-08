@@ -131,10 +131,10 @@ REACT_APP_BACKEND_URL=http://localhost:8080
 
 ### 🌍 Backend Deployment
 
-| Platform    | Link                                                          | Notes                      |
-| ----------- | ------------------------------------------------------------- | -------------------------- |
-| 🚀 Render   | [Render Link](https://hotel-management-app-4bl2.onrender.com) | Hosted Spring Boot backend |
-| 🛤️ Railway | (optional) Use if Render is down or backup                    |                            |
+| Platform    | 
+| ----------- | 
+| 🚀 Render   |
+| 🛤️ Railway |
 
 Set the following environment variables:
 
@@ -237,15 +237,31 @@ frontend.url=http://localhost:3000,https://hotelmanagementservice.netlify.app
 ---
 
 ## 📸 Screenshots
+https://github.com/Neeraj-Pathak/hotel-management/blob/main/README.md
+*HOMEPAGE*
+![Screenshot_2](https://github.com/user-attachments/assets/24994599-914d-4e70-83fd-f27754409cd1)
 
-> *(Add images here)*
+*REGISTRATION FORM*
+![Screenshot_1](https://github.com/user-attachments/assets/89574f57-48ea-4e71-be33-e07cecaf74f0)
 
-* Admin Room Dashboard
-* Customer Bookings Page
-* Login/Register Page
-* Booking Form
+*LOGIN FORM*
+![Screenshot_3](https://github.com/user-attachments/assets/8d7b7961-eff4-4456-9fa0-cf4c9d5bbda8)
 
----
+*ADMIN POST ROOM*
+![Screenshot_4](https://github.com/user-attachments/assets/12215b20-0518-47f0-b1cc-dd8eb0ed4ed3)
+
+*ADMIN VIEW ROOMS*
+![Screenshot_5](https://github.com/user-attachments/assets/c942d6da-7b1f-40c0-9dce-bf1524f3d586)
+
+*ADMIN RESERVATIONS*
+![Screenshot_7](https://github.com/user-attachments/assets/d86d4922-1389-433c-82cb-786a8c5e281a)
+
+*CUSTOMER VIEW & BOOK ROOMS*
+![Screenshot_6](https://github.com/user-attachments/assets/d3cf02fe-ec4e-4853-bc19-831926af7424)
+
+*CUSTOMER BOOKINGS*
+![Screenshot_8](https://github.com/user-attachments/assets/e5cb3fb1-b552-4522-bb07-ebd2ccc16834)
+
 
 ## 📚 Key Learnings
 
@@ -270,14 +286,4 @@ B.Tech – CSE (AI & ML)
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-```
-
----
-
-✅ **What to Do Next:**
-1. Replace the links like GitHub, LinkedIn, Netlify with your actual URLs.
-2. Optionally add `screenshots/` folder for UI previews.
-3. Push this `README.md` file to your project root.
-
-Let me know if you want this as a downloadable file or with your actual links inserted.
 ```
